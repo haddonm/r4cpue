@@ -16,7 +16,7 @@
   \item DayNight - a code denoting the daynight status D = day, N = night,
      M = mixed, and U = unknown
   \item Effort - the hours trawled
-  \item Zone the xone in which trawling occurs 1 - 3
+  \item Zone the zone in which trawling occurs 1 - 3
 }}
 \description{
 sps - a 11603 x 10 data.frame for testing CPUE functions
