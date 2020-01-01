@@ -33,7 +33,7 @@ savereults saves all the tables generated to a text file
     the standardization, the: catch-by-method, catch-by-zone, and the
     catch-by-DepCat, but also the number of observations modified by each
     of the selction criteria, the data summary, and the raw output from the
-    standardizatio.
+    standardizatio. Customized for use with SESSF data-sets
 }
 \examples{
 \dontrun{

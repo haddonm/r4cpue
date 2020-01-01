@@ -24,57 +24,6 @@ a data.frame with the rows being each variable from the input
 properties - used to check a data.frame before
     standardization
 }
-\details{
-#' @title getcentral - calculates an array of means to scale the CPUE
-#'
-#' @description getcentral - calculates array of central tendencies with which
-#'   to scale the CPUE.
-#'   The current outcome scales the time-series of the standardized CPUE to
-#'   have a mean of 1.0. This aids the visual comparison of different
-#'   time-series. However, when describing the standardization to industry
-#'   members the mean of 1.0 can be confusing, so the option exists of
-#'   rescaling the optimum time-series back to the same scale as the
-#'   nominal CPUE. One simple way of doing is to recognize that the mean of
-#'   the optimum is 1.0 so if the time-series is multiplied by a measure of
-#'   the central tendency of the nominal CPUE this will scale the time-series
-#'   to whatever measure of central tendency is used.
-#' @param indat is the data.frame containing the raw data, which must contain
-#'   a column with the same name as the dependent variable identified.
-#' @param dependent - the name of the dependent variable in your dataset;
-#'   defaults to 'LnCE'
-#' @return a vector of three measures of the central tendency of the nominal
-#'   CPUE. The first is the geometric mean, the second is the arithmetic
-#'   mean, and the third is the median nominal CPUE.
-#' @export
-#' @examples
-#' dontrun{
-#' data(sps)
-#' pick <- which(sps$Method == "AL")
-#' if (length(pick) > 0) {
-#'    sps1 <- sps[pick,]
-#'  } else {
-#'    sps1 <- sps
-#'  }
-#' par(mfrow = c(2,1))
-#' par(mai=c(0.5,0.5,0.05,0.05),oma=c(0.0,0,0.0,0.0))
-#' par(cex=0.85, mgp=c(1.35,0.35,0), font.axis=7,font=7)
-#' hist(sps1$LnCE,main="")
-#' hist(exp(sps1$LnCE),main="")
-#' print(getcentral(sps1))
-#' print(getcentral(sps1,dependent="LnCE"))
-#' }
-getcentral <- function(indat,dependent="LnCE") {
-   CE <- exp(indat[,dependent])
-   arithCE <- mean(CE,na.rm=TRUE)
-   medCE <- median(CE,na.rm=TRUE)
-   avLnCE <- mean(indat[,dependent],na.rm=TRUE)
-   sdLnCE <- sd(indat[,dependent],na.rm=TRUE)
-   avGeo <- exp(avLnCE + (sdLnCE * sdLnCE)/2)
-   ans <- c(avGeo,arithCE,medCE)
-   names(ans) <- c("geometric","arithmetic","median")
-   return(ans)
-} # end of getmeans
-}
 \examples{
 \dontrun{
 data(ab)
