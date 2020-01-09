@@ -25,7 +25,9 @@ a list containing the standardization of class 'CEout'
 \description{
 Conduct a standarization on log-transformed CPUE data using lm.
   A number of predefined models are entered (use makemodels) with the raw
-  data and a label.
+  data and a label. The optimum model is taken to be the one with the
+  smallest AIC, though usually (not always) this is the same as with the 
+  largest adj-r2.
 }
 \examples{
 \dontrun{

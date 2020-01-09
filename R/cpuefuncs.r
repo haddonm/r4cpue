@@ -877,7 +877,9 @@ selectdata <- function(indat,dependent="LnCE",Ldepth=0,Udepth=1000,
 #'
 #' @description Conduct a standarization on log-transformed CPUE data using lm.
 #'   A number of predefined models are entered (use makemodels) with the raw
-#'   data and a label.
+#'   data and a label. The optimum model is taken to be the one with the
+#'   smallest AIC, though usually (not always) this is the same as with the 
+#'   largest adj-r2.
 #' @param inmods is the list of models to be analysed along with their
 #'   respective labels - can be generated using makemodels
 #' @param indat is the data.frame containing the raw data, which must contain
@@ -953,7 +955,8 @@ standLM <- function(inmods,indat,inlab="",console=TRUE){ #inmods=mods;indat=sps1
    optimum <- which.max(WhichM["adj_r2",])
    altopt <- which.min(WhichM["AIC",])
    if (optimum != altopt) {
-      label <- "adj_r2 gives a differnt optimum to AIC! AIC being used as optimum."
+      label <- "adj_r2 gives a different optimum to AIC! AIC being used as optimum."
+      warning(cat("\n",label,"\n\n"))
       optimum <- altopt
    }
    msg <- paste("Optimum model ",inmods[optimum],sep="")
