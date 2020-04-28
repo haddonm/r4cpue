@@ -4,8 +4,7 @@
 \alias{fishery}
 \title{fishery - generates vectors of year, catch, effort, and cpue}
 \usage{
-fishery(indat, years = "Year", catch = "catch", effort = "effort",
-  cpue = "CE")
+fishery(indat, years = "Year", catch = "catch", effort = "effort", cpue = "CE")
 }
 \arguments{
 \item{indat}{the input data.frame or matrix}

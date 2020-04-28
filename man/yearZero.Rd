@@ -24,7 +24,7 @@ A matrix of the variables in 'label' with a column for each of
 \description{
 yearZero - examines an input data.frame of matrix in the
    variables listed in the parameter 'label' and counts the zeros,
-   NAs, and those >0. It counts these relative to a 'Year' variable,
+   NAs, and those greater than 0. It counts these relative to a 'Year' variable,
    or any grouping variable identified using the 'years' parameter.
 }
 \examples{

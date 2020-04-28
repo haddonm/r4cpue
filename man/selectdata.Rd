@@ -4,9 +4,19 @@
 \alias{selectdata}
 \title{selectdata - select records from the sessf data}
 \usage{
-selectdata(indat, dependent = "LnCE", Ldepth = 0, Udepth = 1000,
-  startyear = 0, finalyear = 3000, inzones = NA, ORzone = NA,
-  sharkzone = NA, method = NA, fishery = NA)
+selectdata(
+  indat,
+  dependent = "LnCE",
+  Ldepth = 0,
+  Udepth = 1000,
+  startyear = 0,
+  finalyear = 3000,
+  inzones = NA,
+  ORzone = NA,
+  sharkzone = NA,
+  method = NA,
+  fishery = NA
+)
 }
 \arguments{
 \item{indat}{the data set to be filtered - usually sps}

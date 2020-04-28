@@ -218,19 +218,23 @@ geomean <- function(invect) {
 #'
 #' @return a matrix containing the parameters for invar
 #' @export getfact
-getfact <- function(inmat,invar) {  # inmat=model5; invar="Year"
+getfact <- function(inmat,invar) {  # inmat=model; invar="Year"
    allowable <- c("matrix","CEout","lm","gam")
    whatclass <- class(inmat)
    if (length(whatclass) > 1) {
       if ("gam" %in% whatclass) {
          whatclass <- "gam"
-      } else {
+        } else {
          if ("lm" %in% whatclass) {
             whatclass <- "lm"
-         } else {
-            whatclass <- "no"
+          } else {
+            if ("matrix" %in% whatclass) {
+               whatclass <- "matrix"
+              } else {
+               whatclass <- "no"
+            }
          }
-      }
+      } 
    }
    if (whatclass %in% allowable) {
       if (whatclass == "matrix") pardat <- inmat
@@ -903,7 +907,7 @@ selectdata <- function(indat,dependent="LnCE",Ldepth=0,Udepth=1000,
 #' round(out$WhichM,4)
 #' plotstand(out,bars=TRUE)
 #' }
-standLM <- function(inmods,indat,inlab="",console=TRUE){ #inmods=mods;indat=sps1;inlab=""
+standLM <- function(inmods,indat,inlab="",console=TRUE){ #inmods=mods;indat=sps2;inlab=""; console=TRUE
    NModels <- length(inmods)
    labelM <- inmods[[NModels]]
    NModels <- NModels - 1
@@ -921,7 +925,7 @@ standLM <- function(inmods,indat,inlab="",console=TRUE){ #inmods=mods;indat=sps1
    geomod <- inmods[[1]]   # the Year term
    model <- lm(geomod,data=indat)    # used to estimate the total sum of squared
    totalssq <- sum(anova(model)[2]) # used in the %variation estimates
-   for (index in 1:NModels) {  # index <- 8
+   for (index in 1:NModels) {  # index <- 1
       if (console) cat(as.character(inmods[[index]]),"\n")
       model <-  lm(inmods[[index]],data=indat)
       modellist[[index]] <- model
@@ -1156,7 +1160,7 @@ yearNA <- function(indat,years="Year",empty=FALSE) {
 #'
 #' @description yearZero - examines an input data.frame of matrix in the
 #'    variables listed in the parameter 'label' and counts the zeros,
-#'    NAs, and those >0. It counts these relative to a 'Year' variable,
+#'    NAs, and those greater than 0. It counts these relative to a 'Year' variable,
 #'    or any grouping variable identified using the 'years' parameter.
 #' @param indat the data.frame or matrix to be examined
 #' @param years the grouping variable for counts to be compared across,

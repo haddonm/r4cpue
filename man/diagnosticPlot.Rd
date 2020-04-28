@@ -4,8 +4,7 @@
 \alias{diagnosticPlot}
 \title{diagnosticPlot produces diagnostic plots of the regression.}
 \usage{
-diagnosticPlot(inout, inmodel, indat, inlabel = "", height = 6,
-  width = 8)
+diagnosticPlot(inout, inmodel, indat, inlabel = "", height = 6, width = 8)
 }
 \arguments{
 \item{inout}{is the list from standLM.}

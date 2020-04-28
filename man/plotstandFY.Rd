@@ -4,8 +4,14 @@
 \alias{plotstandFY}
 \title{plotstandFY - optimum model & Geometric mean for fishing years}
 \usage{
-plotstandFY(stnd, yrtick = 4, bars = FALSE, P = 95, lstyr = NA,
-  alterpar = TRUE)
+plotstandFY(
+  stnd,
+  yrtick = 4,
+  bars = FALSE,
+  P = 95,
+  lstyr = NA,
+  alterpar = TRUE
+)
 }
 \arguments{
 \item{stnd}{is the list output from standLM}

@@ -4,8 +4,16 @@
 \alias{plotfishery}
 \title{plotfishery plots an array of data for the fishery.}
 \usage{
-plotfishery(InData2, Datain, spsname = "", Ldep = 0, Udep = 1000,
-  zones = "Zone", legpos = "L", legval = 0.6)
+plotfishery(
+  InData2,
+  Datain,
+  spsname = "",
+  Ldep = 0,
+  Udep = 1000,
+  zones = "Zone",
+  legpos = "L",
+  legval = 0.6
+)
 }
 \arguments{
 \item{InData2}{is he selected data from selectdata, usually sps1}

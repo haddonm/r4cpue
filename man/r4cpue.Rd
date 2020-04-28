@@ -3,7 +3,6 @@
 \docType{package}
 \name{r4cpue}
 \alias{r4cpue}
-\alias{r4cpue-package}
 \title{r4cpue a set of functions to assist with CPUE standardization}
 \description{
 The r4cpue package provides two categories of functions
