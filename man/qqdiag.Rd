@@ -46,7 +46,6 @@ qqdiag generates a qqplot with a complementary histogram of
     invisibly returned histogram values.
 }
 \examples{
-
 y <- rep(1:100,2)
 x <- rnorm(200,mean=10,sd=1)
 model <- lm(y ~ x)

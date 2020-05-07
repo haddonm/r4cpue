@@ -6,15 +6,13 @@
 \usage{
 plotprep(
   width = 6,
-  height = 4,
-  plots = c(1, 1),
+  height = 3.6,
   usefont = 7,
   cex = 0.85,
-  xmtext = TRUE,
-  ymtext = TRUE,
   newdev = TRUE,
-  rows = TRUE,
-  filename = ""
+  filename = "",
+  resol = 300,
+  verbose = TRUE
 )
 }
 \arguments{
@@ -22,29 +20,22 @@ plotprep(
 
 \item{height}{defaults to 3 inches = 7.62cm - height of plot}
 
-\item{plots}{defaults to c(1,1), but arranges multiple plots. If used it may
-be necessary to print out this code and adjust the mai and oma variables}
-
 \item{usefont}{default is 7 (bold Times); 1 = sans serif, 2 = sans serif bold}
 
 \item{cex}{default is 0.85, the size of font used for text within the plots}
 
-\item{xmtext}{default is TRUE; if plots is not c(1,1) this alters the mai and
-oma variables for the x-axis to allow for mtexting and avoid the x title}
-
-\item{ymtext}{default is TRUE; if plots is not c(1,1) this alters the mai and
-oma variables for the y-axis to allow for mtexting and avoid the y title}
-
 \item{newdev}{reuse a previously defined graphics device or make a new one;
 defaults to TRUE}
 
-\item{rows}{defaults to TRUE, determines whether to use mfrow or mfcol}
-
 \item{filename}{defaults to "" = do not save to a filename. If a filename is}
+
+\item{resol}{the resolution of the png file, if there is one, default=300}
+
+\item{verbose}{comments to the connsole, default = TRUE}
 }
 \value{
-Checks for and sets up a graphics device and sets the default plotting
-  par values. This changes the current plotting options!
+Checks for and sets up a graphics device and sets the 
+    default plotting par values. oldpar values returned invisibly
 }
 \description{
 plotprep: sets up a window and the par values for a single plot.

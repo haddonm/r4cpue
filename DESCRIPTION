@@ -1,16 +1,16 @@
 Package: r4cpue
 Type: Package
-Title: Functions to assist with CPUE standaridzation
-Version: 0.1.2
-Date: 2020-04-28
+Title: Functions to assist with CPUE standardization
+Version: 0.1.3
+Date: 2020-05-07
 Author: <Malcolm.Haddon@csiro.au>
 Maintainer: <Malcolm.Haddon@csiro.au>
 Description: Functions to assist with CPUE standardization. These include
-    standLM, plotstand, impactPlot and others as they are added. Maps
+    standLM, plotstand, impactPlot and others. Maps
     and closures can be generated uing the associated package called
     r4maps. The optimum model is now selected via AIC and a warning issued
-    if the adj_r2 selects a different factor. This now works as intended 
-    under R4.0.0
+    if the adj_r2 selects a different factor. In R4.0.0, this now 
+    works as intended.
 Depends:
     R (>= 3.2.0)
 Imports:

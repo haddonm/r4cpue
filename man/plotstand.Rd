@@ -4,7 +4,15 @@
 \alias{plotstand}
 \title{plotstand - plot optimum model from standLM  vs Geometric mean}
 \usage{
-plotstand(stnd, bars = FALSE, geo = 0, P = 95, catch = NA, usefont = 7)
+plotstand(
+  stnd,
+  bars = FALSE,
+  geo = 0,
+  P = 95,
+  catch = NA,
+  usefont = 7,
+  devpar = TRUE
+)
 }
 \arguments{
 \item{stnd}{is the list output from standLM}
@@ -25,6 +33,8 @@ then a vector of catches needs to be input here}
 
 \item{usefont}{enables the font used in the plot to be modified. Most
 publications appear to prefer usefont=1; defaults to 7 - Times bold}
+
+\item{devpar}{define the plot par values, default=TRUE}
 }
 \value{
 a plot of the model with the smallest AIC (solid line) and the
